@@ -80,7 +80,7 @@ function calcularMediana(lista) {
 calcularMediana([500,450,200,547,74]);
 
 
-const lista_1 = [1,5,7,5,3,7,5,7,8,8,1,5,2,4,6,7];
+const lista_1 = [5,3,7,5,7,8,8,1,1,1,5,2,4,6,7,8,8];
 
 const lista_1_Conteo = {};
 
@@ -100,10 +100,51 @@ const lista_1_Array = Object.entries(lista_1_Conteo).sort(
     }
 );
 
-const moda = [
-    {numero_repeticiones: lista_1_Array[lista_1_Array.length-1]},
-    {numero_repeticiones: lista_1_Array[lista_1_Array.length-2]}
-];
+let conjunto;
+let moda = [];
+let resultado;
+
+for(i=0;i<lista_1_Array.length-1;i++) {
+    if(lista_1_Array[lista_1_Array.length-1][1] === lista_1_Array[i][1]) {
+        conjunto = [
+            lista_1_Array[i][0]
+        ];
+        function newModa() {
+            moda.push(conjunto);
+        }
+        newModa();
+        resultado = `las modas son: ${moda},${lista_1_Array[lista_1_Array.length-1][0]} repitiendose ${lista_1_Array[lista_1_Array.length-1][1]} veces`;
+    } else {
+        resultado = `la moda es: ${lista_1_Array[lista_1_Array.length-1][0]}, repitiendose ${lista_1_Array[lista_1_Array.length-1][1]} veces`
+    }
+}
+
+
+
+
+
+
+// var arrayToObject = function(array2d) {
+//     let newObject = {};
+
+//     for(i=0;i<moda.length;i++) {
+//         newObject[array2d[i][0]] = array2d[i][0][1];
+//     }
+
+//     return newObject;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
