@@ -7,11 +7,48 @@
     <title>Calculadora herramientas estadisticas</title>
 </head>
 <body>
-    <h1>Calculadora de herramientas estadisticas</h1>
-    <p>programa donde puede calcular el promedio, mediana y moda de un conjunto de elementos</p>
-    <h2>Promedio(media aritmetica)</h2>
-    <h2>Mediana</h2>
-    <h2>Moda</h2>
+    <header>
+        <h1>Calculadora de herramientas estadisticas</h1>
+        <p>programa donde puede calcular el promedio, mediana y moda de un conjunto de elementos</p>
+    </header>
+
+    <main>
+        <h2>Promedio(media aritmetica)</h2>
+        <form action="promedio">
+            <label for="conjunto-promedio">Ingrese el conjunto de elementos</label>
+            <input type="text" id="conjunto-promedio" placeholder="ej: 1,2,3,4">
+            <button type="button" onclick="promedio()">Calculo</button>
+            <p id="resultado-promedio"></p>
+        </form>
+        <h2>Mediana</h2>
+        <form action="mediana">
+            <label for="conjunto-mediana">Ingrese el conjunto de elementos</label>
+            <input type="text" id="conjunto-mediana" placeholder="ej: 1,2,3,4">
+            <button type="button" onclick="mediana()">Calculo</button>
+            <p id="resultado-mediana"></p>
+        </form>
+        <h2>Moda</h2>
+        <form action="moda">
+            <label for="conjunto-moda">Ingrese el conjunto de elementos</label>
+            <input type="text" id="conjunto-moda" placeholder="ej: 1,2,3,maria,andres...">
+            <button type="button" onclick="moda()">Calculo</button>
+            <p id="resultado-moda"></p>
+        </form>
+    </main>
+
+    <footer>
+        <ul>
+            <li>Autor:</li>
+            <li>Jaime Sanchez</li>
+            <li>Metodo: HTML, CSS y JS</li>
+        </ul>
+        <ul>
+            <li>Contacto:</li>
+            <li><a href="https://www.facebook.com/rainy697">Facebook</a></li>
+            <li><a href="https://www.linkedin.com/in/jaime-orlando-s%C3%A1nchez-mendieta-4bba6b1a1/">Linkedin</a></li>
+            <li><a href="https://github.com/josanchezm">Github</a></li>
+        </ul>
+    </footer>
     <script src="./script.js"></script>
 </body>
 </html>
