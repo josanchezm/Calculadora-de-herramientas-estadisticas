@@ -24,7 +24,7 @@
         <form action="mediana">
             <label for="conjunto-mediana">Ingrese el conjunto de elementos</label>
             <input type="text" id="conjunto-mediana" placeholder="ej: 1,2,3,4">
-            <button type="button" onclick="mediana()">Calculo</button>
+            <button type="button" onclick="mediana()">Calculo</button>,
             <p id="resultado-mediana"></p>
         </form>
         <h2>Moda</h2>
@@ -33,6 +33,15 @@
             <input type="text" id="conjunto-moda" placeholder="ej: 1,2,3,maria,andres...">
             <button type="button" onclick="moda()">Calculo</button>
             <p id="resultado-moda"></p>
+        </form>
+        <h2>Promedio ponderado</h2>
+        <form action="promedio-ponderado">
+            <label for="promedio-ponderado-calculo">Ingrese el conjunto de elementos</label>
+            <input type="text" id="promedio-ponderado-calculo">
+            <label for="ponderacion-ponderado">Ingrese la ponderacion de los elementos</label>
+            <input type="text" id="ponderacion-ponderado">
+            <button type="button" onclick="Promedio_ponderado()">Calculo</button>
+            <p id="resultado-promedio-ponderado"></p>
         </form>
     </main>
 
