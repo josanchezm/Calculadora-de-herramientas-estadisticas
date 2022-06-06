@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
     <title>Calculadora herramientas estadisticas</title>
 </head>
 <body>
@@ -37,9 +41,9 @@
         <h2>Promedio ponderado</h2>
         <form action="promedio-ponderado">
             <label for="promedio-ponderado-calculo">Ingrese el conjunto de elementos</label>
-            <input type="text" id="promedio-ponderado-calculo">
+            <input type="text" id="promedio-ponderado-calculo" placeholder="ej: 5,2.3,3.7,4,4.7">
             <label for="ponderacion-ponderado">Ingrese la ponderacion de los elementos</label>
-            <input type="text" id="ponderacion-ponderado">
+            <input type="text" id="ponderacion-ponderado" placeholder="ej: 2,3,5,5,1">
             <button type="button" onclick="Promedio_ponderado()">Calculo</button>
             <p id="resultado-promedio-ponderado"></p>
         </form>

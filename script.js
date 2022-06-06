@@ -17,7 +17,7 @@ function calcularPromedio(lista) {
     );
 
     const promedioLista = sumaLista/lista.length;
-
+    
     const resultado = promedioLista.toFixed(2);
     return resultado;
 }
@@ -28,7 +28,6 @@ function promedio() {
     const promedioInput = document.getElementById("conjunto-promedio");
     const promedioValue = promedioInput.value;
     const arrayPromedioValue = promedioValue.split(",");
-    console.log(arrayPromedioValue);
     let arrayPromedioValueInt = [];
 
     function arrayInt() {
@@ -37,7 +36,6 @@ function promedio() {
         }
     }
     arrayInt();
-    console.log(arrayPromedioValueInt);
 
     const calculoPromedio = calcularPromedio(arrayPromedioValueInt); 
 
@@ -70,14 +68,16 @@ function calcularMediana(lista) {
     if(esPar(lista.length)) {
         const elemento1 = lista[mitadLista-1];
         const elemento2 = lista[mitadLista];
-    
+
         mediana = calcularPromedio([elemento1,elemento2]);
-        resultado = mediana;
+        resultado = `Lista ordenada: ${lista}
+        Mediana: ${mediana}`;
     
     } else {
         mediana = lista[parseInt(mitadLista)];
 
-        resultado = mediana.toFixed(2);
+        resultado = `Lista ordenada: ${lista}
+        Mediana: ${mediana.toFixed(2)}`;
     }
     return resultado;
 }
@@ -88,6 +88,7 @@ function mediana() {
     const medianaInput = document.getElementById("conjunto-mediana");
     const medianaValue = medianaInput.value;
     const arrayMedianaValue = medianaValue.split(",");
+
     let arrayMedianaValueFloat = [];
 
     for(i=0;i<arrayMedianaValue.length;i++) {
@@ -96,12 +97,20 @@ function mediana() {
 
     const calculoMediana = calcularMediana(arrayMedianaValueFloat); 
     const resultado = document.getElementById("resultado-mediana"); 
-    resultado.innerText = `Mediana: ${calculoMediana}`;
+    resultado.innerText = calculoMediana;
 }
 
 // codigo moda
 
 function calcularModa(lista) {
+    lista.sort();
+
+    lista.sort(
+        function(a,b) {
+            return a - b;
+        }
+    );
+
     const listaConteo = {};
 
     lista.map(
@@ -133,21 +142,20 @@ function calcularModa(lista) {
                 moda.push(conjunto);
             }
             newModa();
-            resultado = `Moda(s): ${moda}
+            resultado = `Lista ordenada: ${lista}
+            Moda(s): ${moda}
             Repiticiones: ${listaArray[listaArray.length-1][1]}`;
         }   
     }
-    console.log(resultado);
     return resultado;
 }
 
-calcularModa(["andres","andres","sofia","sofia"]);
+calcularModa(["andres","andres","sofia","sofia","daniela",500.5,500.5]);
 
 function moda() {
     const modaInput = document.getElementById("conjunto-moda");
     const modaValue = modaInput.value;
     const arrayModaValue = modaValue.split(",");
-    console.log(arrayModaValue);
 
     const calculoModa = calcularModa(arrayModaValue); 
     const resultado = document.getElementById("resultado-moda"); 
@@ -211,3 +219,45 @@ function Promedio_ponderado() {
     }
 }
 
+// codigo estatico promedio ponderado con .reduce y .map 
+
+// const notes = [
+//     {
+//         course: "Educación Física",
+//         note: 10,
+//         credit: 2,
+//     },
+//     {
+//         course: "Programación",
+//         note: 8,
+//         credit: 5,
+//     },
+//     {
+//         course: "Finanzas personales",
+//         note: 7,
+//         credit: 5,
+//     },
+// ];
+
+// const notesWithCredit = notes.map(function (noteObject) {
+//     return noteObject.note * noteObject.credit;
+// });
+
+// const sumOfNotesWithCredit = notesWithCredit.reduce(
+//     function (sum = 0, newVal) {
+//         return sum + newVal;
+//     }
+// );
+
+// const credits = notes.map(function (noteObject) {
+//     return noteObject.credit;
+// });
+
+// const sumOfCredits = credits.reduce(
+//     function (sum = 0, newVal) {
+//         return sum + newVal;
+//     }
+// );
+
+// const promedioPonderadoNotasConCreditos = sumOfNotesWithCredit / sumOfCredits;
+// const resultado = promedioPonderadoNotasConCreditos.toFixed(2);
