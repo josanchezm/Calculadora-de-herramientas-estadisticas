@@ -59,3 +59,19 @@ header h1 {
 header p {
     font-size: var(--p);
 }
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    gap: 7px;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+}
