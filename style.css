@@ -2,17 +2,18 @@
     --very-light-pink: #C7C7C7;
     --text-input-field: #F7F7F7;
     --hospital-green: #ACD9B2;
-    --light-gray: lightgray;
-    --light-grey: lightgrey;
-    --blue: hsla(237, 83%, 59%, 0.916);
+    --light-gray: rgb(211, 211, 211);
+    --light-grey: rgb(211, 211, 211);
+    --blue: rgba(64, 72, 237, 0.916);
     --sm: 1.1rem;
     --md: 1.3rem;
     --lg: 1.5rem;
-    --cupon: 2.3rem;
-    --p: 2.1rem;
+    --p: 1.2rem;
     --h2: 2.3rem;
-    --h1: 3.2rem;
+    --h1: 2rem;
 }
+
+/* Estilos globales */
 
 * {
     padding: 0;
@@ -23,4 +24,38 @@
 
 html {
     font-size: 62.5%;
+}
+
+ul, a {
+    list-style: none;
+    text-decoration: none;
+}
+
+/* Estilos del footer */
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    padding: 15px;
+    gap: 10px;
+}
+
+header picture {
+    width: 45px;
+}
+
+header picture img {
+    width: 100%;
+    object-fit: contain;
+}
+
+header h1 {
+    font-size: var(--h1);
+}
+
+header p {
+    font-size: var(--p);
 }
