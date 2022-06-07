@@ -77,14 +77,11 @@ function calcularMediana(lista) {
         const elemento2 = lista[mitadLista];
 
         mediana = calcularPromedio([elemento1,elemento2]);
-        resultado = `Lista ordenada: ${lista}
-        Mediana: ${mediana}`;
+        resultado = mediana;
     
     } else {
         mediana = lista[parseInt(mitadLista)];
-
-        resultado = `Lista ordenada: ${lista}
-        Mediana: ${mediana.toFixed(2)}`;
+        resultado = mediana.toFixed(2);
     }
     return resultado;
 }
@@ -102,16 +99,18 @@ function mediana() {
         arrayMedianaValueFloat.push(parseFloat(arrayMedianaValue[i]));
     }
 
-    const calculoMediana = calcularMediana(arrayMedianaValueFloat); 
+    const calculoMediana = calcularMediana(arrayMedianaValueFloat);
     const resultado = document.getElementById("resultado-mediana");
-    if (medianaValue === '') {
-        alert('es necesario que ingrese valores numericos para el calculo!')
-        resultado.innerText = ''
-    } 
+
+    if(calculoMediana === 'NaN') {
+        alert('es necesario que ingrese valores numericos para el calculo!');
+        resultado.innerText = '';
+    }
     else {
-        resultado.innerText = calculoMediana;
+        resultado.innerText = `Lista ordenada: ${arrayMedianaValueFloat}
+        Mediana: ${calculoMediana}`;
         resultado.style.opacity = '100%';
-    } 
+    }
 }
 
 // codigo moda
