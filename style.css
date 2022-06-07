@@ -26,12 +26,20 @@ html {
     font-size: 62.5%;
 }
 
+body {
+    display: grid;
+    height: 100vh;
+    grid-template: auto 1fr auto/auto;
+    background: #9ed0ff;
+    gap: 10px;
+}
+
 ul, a {
     list-style: none;
     text-decoration: none;
 }
 
-/* Estilos del footer */
+/* Estilos del header */
 
 header {
     display: flex;
@@ -39,15 +47,25 @@ header {
     align-items: center;
     justify-items: center;
     text-align: center;
-    padding: 15px;
+    padding: 10px;
+    gap: 10px;
+}
+
+header > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 10px;
 }
 
 header picture {
+    display: block;
     width: 45px;
 }
 
 header picture img {
+    align-self: center;
     width: 100%;
     object-fit: contain;
 }
@@ -60,23 +78,6 @@ header p {
     font-size: var(--p);
 }
 
-<<<<<<< HEAD
-footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-    gap: 7px;
-}
-
-footer ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 7px;
-}
-=======
 /* Estilos del main  */
 
 main {
@@ -85,7 +86,7 @@ main {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 15px;
+    padding: 10px;
     gap: 10px;
 }
 
@@ -109,6 +110,10 @@ main form input {
     padding: 3px 5px;
 }
 
+main form input:hover {
+    background-color: var(--text-input-field);
+}
+
 main form button {
     font-size: var(--lg);
     padding: 2px 10px;
@@ -120,5 +125,34 @@ main form button:active {
     border-radius: 8px;
 }
 
+main div form p {
+    font-size: var(--md);
+    opacity: 0;
+    transition-duration: 1.5s;
+}
 
->>>>>>> main-content
+/* Estilos del footer */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px 10px;
+    gap: 7px;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    gap: 7px;
+}
+
+@media (min-width: 320px) {
+    footer ul {
+        font-size: 1.2rem;
+    }
+}
+

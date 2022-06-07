@@ -40,7 +40,14 @@ function promedio() {
     const calculoPromedio = calcularPromedio(arrayPromedioValueInt); 
 
     const resultado = document.getElementById("resultado-promedio"); 
-    resultado.innerText = `Promedio: ${calculoPromedio}`;
+    if(calculoPromedio === 'NaN') {
+        alert('es necesario que ingrese valores numericos para el calculo!')
+        resultado.innerText = ''
+    }
+    else {
+        resultado.innerText = `Promedio: ${calculoPromedio}`;
+        resultado.style.opacity = '100%';
+    }
 }
 
 // codigo mediana
@@ -96,8 +103,15 @@ function mediana() {
     }
 
     const calculoMediana = calcularMediana(arrayMedianaValueFloat); 
-    const resultado = document.getElementById("resultado-mediana"); 
-    resultado.innerText = calculoMediana;
+    const resultado = document.getElementById("resultado-mediana");
+    if (medianaValue === '') {
+        alert('es necesario que ingrese valores numericos para el calculo!')
+        resultado.innerText = ''
+    } 
+    else {
+        resultado.innerText = calculoMediana;
+        resultado.style.opacity = '100%';
+    } 
 }
 
 // codigo moda
@@ -158,13 +172,22 @@ function moda() {
     const arrayModaValue = modaValue.split(",");
 
     const calculoModa = calcularModa(arrayModaValue); 
-    const resultado = document.getElementById("resultado-moda"); 
-    resultado.innerText = calculoModa;
+    const resultado = document.getElementById("resultado-moda");
+    if (modaValue === '') {
+        alert('es necesario que ingrese valores para el calculo!')
+        resultado.innerText = '';
+    }
+    else {
+        resultado.innerText = calculoModa;
+        resultado.style.opacity = '100%';
+    } 
 }
 
 // codigo promedio ponderado 
 
 function argumentosValidos(lista1,lista2) {
+    console.log(lista1.length)
+    console.log(lista2.length)
     if(lista1.length === lista2.length) {
         return true;
     } else {
@@ -172,8 +195,8 @@ function argumentosValidos(lista1,lista2) {
     }
 }
 
+
 function calcularPromedioPonderado(listaNumero,listaPonderado) {
-  
     if(argumentosValidos(listaNumero,listaPonderado)) {
         let sumatoriaPonderada = 0;
         let divisor = 0;
@@ -187,11 +210,12 @@ function calcularPromedioPonderado(listaNumero,listaPonderado) {
         const resultado = promedioPonderado.toFixed(2);
         return resultado;
     } else {
-        alert("Cada elemento debe contar con su ponderacion correspondiente y viceversa");
+        alert('Cada elemento debe contar con su ponderacion correspondiente y viceversa');
+        return '';
     }
 }
 
-calcularPromedioPonderado([3.7,4,2.5,3],[1,3,3,2]);
+console.log(calcularPromedioPonderado([3.7,4,2.5,3],[1,3,3,2]));
 
 function Promedio_ponderado() {
     const ponderadoInput = document.getElementById("promedio-ponderado-calculo");
@@ -202,22 +226,34 @@ function Promedio_ponderado() {
     let ponderadoValueArray = ponderadoValue.split(",");
     let ponderacionValueArray = ponderacionValue.split(",");
 
-    if(argumentosValidos(ponderadoValueArray,ponderacionValueArray)) {
-        let ponderadoValueArrayFloat = [];
-        let ponderacionValueArrayFloat = [];
+    let ponderadoValueArrayFloat = [];
+    let ponderacionValueArrayFloat = [];
 
-        for(i=0;i<ponderadoValueArray.length;i++) {
+    for(i=0;i<ponderadoValueArray.length;i++) {
         ponderadoValueArrayFloat.push(parseFloat(ponderadoValueArray[i]));
-        ponderacionValueArrayFloat.push(parseFloat(ponderacionValueArray[i])); 
-        }
-
-        const calculoPonderado = calcularPromedioPonderado(ponderadoValueArrayFloat,ponderacionValueArrayFloat);
-        const resultado = document.getElementById("resultado-promedio-ponderado");
-        resultado.innerText = `Promedio ponderado: ${calculoPonderado}`;
-    } else {
-        alert("Cada elemento debe contar con su ponderacion correspondiente y viceversa");
     }
-}
+    for(i=0;i<ponderacionValueArray.length;i++) {
+        ponderacionValueArrayFloat.push(parseFloat(ponderacionValueArray[i]));
+    }
+
+    const calculoPonderado = calcularPromedioPonderado(ponderadoValueArrayFloat,ponderacionValueArrayFloat);
+    const resultado = document.getElementById("resultado-promedio-ponderado");
+
+    if(argumentosValidos(ponderadoValueArrayFloat,ponderacionValueArrayFloat)) {
+        if(calculoPonderado === 'NaN') {
+            alert('Recuerde ingresar valores numericos tanto en el conjunto como en la ponderacion de este');
+            resultado.innerText = '';
+        }
+        else {
+            resultado.innerText = `Promedio ponderado: ${calculoPonderado}`;
+            resultado.style.opacity = '100%';
+        }
+    }
+    else {
+        resultado.innerText = '';
+    }  
+} 
+
 
 // codigo estatico promedio ponderado con .reduce y .map 
 
