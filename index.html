@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/tablet-desktop.css" media="(min-width: 768px)">
+    <title>Calculadora herramientas estadisticas</title>
+</head>
+<body>
+    <header>
+        <div>
+            <picture><img src="https://i.pinimg.com/originals/5a/ef/5f/5aef5fc1906cdb4ad68c7be2c546b125.png" alt="Icono de estadistica"></picture>
+            <h1>Calculadora de herramientas estadisticas</h1>
+        </div>
+        <p>programa donde puede calcular el promedio, mediana y moda de un conjunto de elementos</p>
+    </header>
+
+    <main>
+        <div>
+            <h2>Promedio(media aritmetica)</h2>
+            <form action="promedio">
+                <label for="conjunto-promedio">Ingrese el conjunto de elementos</label>
+                <input type="text" id="conjunto-promedio" placeholder="ej: 1,2,3,4">
+                <button type="button" onclick="promedio()">Calculo</button>
+                <p id="resultado-promedio"></p>
+            </form>
+        </div>
+        <div>
+            <h2>Mediana</h2>
+            <form action="mediana">
+                <label for="conjunto-mediana">Ingrese el conjunto de elementos</label>
+                <input type="text" id="conjunto-mediana" placeholder="ej: 1,2,3,4">
+                <button type="button" onclick="mediana()">Calculo</button>
+                <p id="resultado-mediana"></p>
+            </form>
+        </div>
+        <div>
+            <h2>Moda</h2>
+            <form action="moda">
+                <label for="conjunto-moda">Ingrese el conjunto de elementos</label>
+                <input type="text" id="conjunto-moda" placeholder="ej: 1,2,3,maria,andres...">
+                <button type="button" onclick="moda()">Calculo</button>
+                <p id="resultado-moda"></p>
+            </form>
+        </div>
+        <div>
+            <h2>Promedio ponderado</h2>
+            <form action="promedio-ponderado">
+                <label for="promedio-ponderado-calculo">Ingrese el conjunto de elementos</label>
+                <input type="text" id="promedio-ponderado-calculo" placeholder="ej: 5,2.3,3.7,4,4.7">
+                <label for="ponderacion-ponderado">Ingrese la ponderacion de los elementos</label>
+                <input type="text" id="ponderacion-ponderado" placeholder="ej: 2,3,5,5,1">
+                <button type="button" onclick="Promedio_ponderado()">Calculo</button>
+                <p id="resultado-promedio-ponderado"></p>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <ul>
+            <li>Autor: Jaime Sanchez</li>
+            <li>Metodo: HTML, CSS y JS</li>
+        </ul>
+        <ul>
+            <li>Contacto:</li>
+            <li><a href="https://www.facebook.com/rainy697">Facebook</a></li>
+            <li><a href="https://www.linkedin.com/in/jaime-orlando-s%C3%A1nchez-mendieta-4bba6b1a1/">Linkedin</a></li>
+            <li><a href="https://github.com/josanchezm">Github</a></li>
+        </ul>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+</html>
